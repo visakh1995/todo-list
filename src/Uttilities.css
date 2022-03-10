@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+   font-family : "Lato",sans-serif;
+   color:#333;
+   line-height:1.6;
+}
+
+h1,h2,h3,h4 {
+    margin:10px 0;
+    font-weight:300;
+    line-height: 1.2;
+}
+
+p {
+    margin: 10px 0;
+}
+/* todolist */
+.todoList {
+    height:2000px;
+    background-color: #002240;
+    color:#fff;
+    position:relative;
+    
+}
+
+.todoList-form {
+    position:absolute;
+    top:70px;
+    /* height:400px; */
+    left:450px;
+    width:460px;
+    padding:40px;
+    z-index:100;
+    justify-content: center;
+    text-align: center;
+}
+
+.todoList-form h2 {
+    font-size: 26px;
+    padding:30px 0;
+}
+
+.todoList p {
+    padding: 2px 0;
+}
+
+.todoList .form-control {
+    margin:50px 0;
+}
+
+.todoList-form input[type="text"] {
+    border : 0;
+    border-bottom: 1px solid #b4becb;
+    width :100%;
+    padding:8px;
+    font-size: 16px;
+}
+
+.todoList-form input:focus {
+    outline : none;
+}
+
+.listItem-plan {
+      display:flex;
+      background-color: darkblue;
+      align-items:center;
+      justify-content: space-between;
+      padding:0.15rem 1rem;
+      border-radius: 5px;
+      color:#fff;
+      margin-bottom: 0.5rem;
+
+ }
+ 
+.listItem-plan .edit-btn{
+    margin:10px;
+    background-color: #fff;
+}
+.listItem-plan .delete-btn{
+    margin:10px;
+}
+
+.alert-message p{
+    background-color: darkmagenta;
+    color:#fff;
+    padding:5px 0;
+}
+
+/* uttilitie */
+
+.container {
+    max-width :1100px;
+    margin:0 auto;
+    overflow: auto;
+    padding:0 40px;
+}
+
+.card {
+    background-color:#fff;
+    color:#000;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding:10px;
+    margin:10px;
+    min-height: 500px;
+}
+
+.btn {
+    display:inline-block;
+    padding:10px 30px;
+    cursor:pointer;
+    background-color: #047aed;
+    color:#fff;
+    border:none;
+    border-radius: 5px;
+    margin:30px 0;
+}
+
+.btn-dark{
+    background-color: #002240;
+    color:white;
+    padding:5px 10px;
+    display:flex;
+    justify-content: right;
+
+}
+
+.btn-primary {
+    background-color: darkmagenta;
+    color:white;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .todoList-form {
+        position:absolute;
+        top:70px;
+        left:130px;
+        width:500px;
+        padding:40px;
+        z-index:100;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .todoList-form {
+        position:absolute;
+        top:50px;
+        left:100px;
+        width:350px;
+        padding:40px;
+        z-index:100;
+        justify-content: center;
+        text-align: center;
+    }
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
