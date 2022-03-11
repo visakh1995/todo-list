@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Uttilities.css";
 import List from "./List";
 import Alert from "./Alert";
+import Navbar from "./Navbar";
+import data from "./data";
+import Users from "./Users";
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  if (list) {
+    return (list = JSON.parse(localStorage.getItem("list")));
+  } else {
+    return [];
+  }
+};
 function App() {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const [editID, setEditID] = useState(null);
+
+  const [people, setPeople] = useState(data);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
@@ -49,37 +63,63 @@ function App() {
     showAlert(true, "danger", "removed successfully");
     setList(list.filter((item) => item.id != id));
   };
-  return (
-    <section className="todoList">
-      <div class="container grid">
-        <div className="todoList-form card">
-          <h2>Organize your plans here.</h2>
-          <form onSubmit={handleSubmit}>
-            {alert.show && <Alert {...alert} removeAlert={showAlert} />}
-            <div className="form-control">
-              <input
-                type="text"
-                placeholder="Enter something"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <button type="submit" className="btn btn-primary">
-                {isEditing ? "Update" : "Create"}
-              </button>
-            </div>
-          </form>
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
-          {list.length > 0 && (
-            <div className="clear-list">
-              <List items={list} editItem={editItem} removeItem={removeItem} />
-              <button className="btn btn-dark" onClick={clearList}>
-                Clear Items
-              </button>
-            </div>
-          )}
+  return (
+    <div>
+      <Navbar />
+      <section className="todoList">
+        <div class="container grid">
+          <div className="todoList-form card">
+            <h2>Organize your plans here.</h2>
+            <form onSubmit={handleSubmit}>
+              {alert.show && <Alert {...alert} removeAlert={showAlert} />}
+              <div className="form-control">
+                <input
+                  type="text"
+                  placeholder="Enter something"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <button type="submit" className="btn btn-primary">
+                  {isEditing ? "Update" : "Create"}
+                </button>
+              </div>
+            </form>
+
+            {list.length > 0 && (
+              <div className="clear-list">
+                <List
+                  items={list}
+                  editItem={editItem}
+                  removeItem={removeItem}
+                />
+                <button className="btn btn-dark" onClick={clearList}>
+                  Clear Items
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* users */}
+
+      <section className="users">
+        <div className="container part-2 ">
+          <div className="users-form-1">
+            <Users people={people} />
+          </div>
+          <div className="users-form-2">
+            <p>lorem ipsum lorem </p>
+          </div>
+
+         
+        </div>
+      </section>
+    </div>
   );
 }
 
