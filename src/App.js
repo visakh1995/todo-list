@@ -5,6 +5,10 @@ import Alert from "./Alert";
 import Navbar from "./Navbar";
 import data from "./data";
 import Users from "./Users";
+import Showcase from "./Showcase"
+import CartContainer from "./CartContainer";
+
+import {BrowserRouter as Router,Link,Routes,Route} from 'react-router-dom';
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
   if (list) {
@@ -68,10 +72,14 @@ function App() {
   }, [list]);
 
   return (
+    <Router>
     <div>
       <Navbar />
+      <Routes>
+       <Route exact path='/cart' element={<CartContainer/>}></Route>
+     </Routes>
       <section className="todoList">
-        <div class="container grid">
+        <div class="container flex">
           <div className="todoList-form card">
             <h2>Organize your plans here.</h2>
             <form onSubmit={handleSubmit}>
@@ -105,6 +113,8 @@ function App() {
         </div>
       </section>
 
+
+
       {/* users */}
 
       <section className="users">
@@ -112,14 +122,17 @@ function App() {
           <div className="users-form-1">
             <Users people={people} />
           </div>
-          <div className="users-form-2">
-            <p>lorem ipsum lorem </p>
-          </div>
 
-         
         </div>
       </section>
+
+     {/* showcase  */}
+     <Showcase/>
+
+
+
     </div>
+    </Router>
   );
 }
 

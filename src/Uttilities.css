@@ -127,14 +127,50 @@ img {
 .users{
     background-color: rgb(228, 241, 32);
 }
-.users .grid {
+/* .users .grid {
     grid-template-columns: repeat(3,1fr);
     gap:30px;
-}
+} */
 .users .part-2{
     padding: 50px;
 }
 
+/* showcase */
+.showcase{
+    background-color: rgb(41, 119, 22);
+    padding: 40px 0;
+    color:#fff;
+    /* auto adjust in min height */
+    min-height:500px;
+
+}
+
+.showcase .grid{
+    grid-template-columns: repeat(55%,45%);
+    /* remove scrollbar */
+    overflow: visible;
+    gap:20px;
+    
+}
+.showcase p{
+    padding:10px 20px;
+    margin:40px;
+    background-color: rgb(9, 26, 172);
+    color:#fff;
+    border-radius: 12px;
+
+}
+
+.cart-container{
+    background-color:#047aed;
+}
+.cart-wrap{
+    text-align:center;
+    justify-content: center;
+}
+.cart-item img{
+width: 30%;
+}
 
 /* uttilitie */
 .container {
@@ -152,19 +188,11 @@ img {
 
 .grid{
     display:grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     height:100%;
 }
-.grid-2{
-    display:grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
 .card {
     background-color:#fff;
     color:#000;
@@ -175,7 +203,7 @@ img {
     min-height: 500px;
 }
 .small-card {
-    background-color: #fff;
+    background-color:#fff;
     border-radius: 5px;
     color:#333;
     box-shadow:0 3px 10px rgba(0,0,0,0.2);
@@ -227,10 +255,23 @@ img {
         justify-content: center;
         text-align: center;
     }
+    .showcase .grid {
+        grid-template-columns: 1fr;
+
+    }
+
+    .showcase p{
+        padding:5px;
+
+    
+    }
+
+
+    
 }
 
 @media (max-width: 500px) {
-    .todoList-form {
+    /* .todoList-form {
         position:absolute;
         top:50px;
         left:100px;
@@ -239,7 +280,14 @@ img {
         z-index:100;
         justify-content: center;
         text-align: center;
+    } */
+    .showcase .grid {
+        grid-template-columns: 1fr;
+
     }
+
+
+
 }
     
 

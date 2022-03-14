@@ -7,7 +7,7 @@ function Users({people}) {
       people.map((person) => {
         const {id, name, image, age} = person;
          return (
-           <div className="users-list small-card ">
+           <div className="users-list card ">
              <img src={image} />
              <p>{name}</p>
              <p>{age}</p>
