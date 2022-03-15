@@ -1,23 +1,30 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 
 function Navbar() {
+    const{amount} = useGlobalContext();
   return (
-      <div className="navbar">
-          <div className="container flex">
-              <h1>Logo</h1>
-              <nav>
-                  <ul>
-                      <li><a href="">Home</a></li>
-                      <li><a href="">Features</a></li>
-                      <li><Link to ="/cart">Cart</Link></li>
-
-                  </ul>
-              </nav>
-
-          </div>
+    <div className="navbar">
+      <div className="container flex">
+        <h1>Logo</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            {/* <li><a href="">Features</a></li> */}
+            <li>
+              <Link to="/cart">
+                <FaCartPlus />
+              </Link>
+            </li>
+            <li>{amount}</li>
+          </ul>
+        </nav>
       </div>
-
+    </div>
   );
 }
 
