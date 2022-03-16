@@ -4,7 +4,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { useGlobalContext } from "./context";
 
 function Navbar() {
-    const{amount} = useGlobalContext();
+  const { amount } = useGlobalContext();
   return (
     <div className="navbar">
       <div className="container flex">
@@ -14,7 +14,12 @@ function Navbar() {
             <li>
               <a href="/">Home</a>
             </li>
-            {/* <li><a href="">Features</a></li> */}
+            <li>
+              <a href="/plans">Plans</a>
+            </li>
+            <li>
+              <a href="/users">Users</a>
+            </li>
             <li>
               <Link to="/cart">
                 <FaCartPlus />
