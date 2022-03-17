@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 const userLeft = false;
 const userWatchingCateMeme = true;
 
@@ -14,9 +14,9 @@ const promiseOnIt = () => {
   });
 
   p.then((message) => {
-    console.log("This is in the then" + message);
+    // console.log("This is in the then" + message);
   }).catch((message) => {
-    console.log("This is in the then" + message);
+    // console.log("This is in the then" + message);
   });
 };
 // normal promise function ends here
@@ -40,10 +40,10 @@ const watchTutorialCallBack = (callback, errorCallback) => {
 };
 watchTutorialCallBack(
   (message) => {
-    console.log("Success:" + message);
+    // console.log("Success:" + message);
   },
   (error) => {
-    console.log(error.name + " " + error.message);
+    // console.log(error.name + " " + error.message);
   }
 );
 
@@ -73,10 +73,10 @@ const watchPromise = () => {
 
 watchPromise()
   .then((message) => {
-    console.log("success" + message);
+    // console.log("success" + message);
   })
   .catch((error) => {
-    console.log(error.name + " " + error.message);
+    // console.log(error.name + " " + error.message);
   });
 
 // rewriting callback function in terms of promise function ends here
@@ -94,7 +94,7 @@ const recordVideoThree = new Promise((resolve, reject) => {
 
 Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
   (messages) => {
-    console.log(messages);
+    // console.log(messages);
   }
 );
 
@@ -115,7 +115,7 @@ const makeRequest = (location) => {
 
 const processRequest = (response) => {
   return new Promise((resolve, reject) => {
-    console.log("We are processing the request");
+    // console.log("We are processing the request");
     resolve(`Extra Information" + ${response}`);
   });
 };
@@ -123,11 +123,11 @@ const processRequest = (response) => {
 const doWork = async () => {
   try {
     const response = await makeRequest('Google');
-    console.log("response received");
+    // console.log("response received");
     const processedResponse = await processRequest(response);
-    console.log(processedResponse);
+    // console.log(processedResponse);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 doWork();

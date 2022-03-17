@@ -1,0 +1,35 @@
+.company-content{
+    background-color: rgb(41, 169, 179);
+    color:#fff;
+    max-width: 300px;
+    padding:10px;
+    margin:20px;
+
+
+}
+.data-company{
+    display:flex;
+    justify-content: center;
+}
+.api-content{
+    display:grid;
+    grid-template-columns: repeat(2,400px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.api-data{
+    background-color:darkolivegreen;
+    color:#fff;
+    text-align: justify;
+    /* padding:10px;
+    margin: 5px 5px; */
+}
+.api-data h3{
+    text-align: center;
+    padding:20px;
+}
+.api-data p{
+    padding:5px 30px;
+}

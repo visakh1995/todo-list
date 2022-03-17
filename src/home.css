@@ -1,0 +1,26 @@
+.home {
+  background-color: darkmagenta;
+  color: #fff;
+  height: 500px;
+}
+
+.home-text h1 {
+  font-size: 40px;
+}
+.home-image{
+    justify-content: center;
+}
+.viewable{
+    background-color: rgb(18, 32, 49);
+    height:400px;
+}
+.view{
+    width: 500px;
+    background-color: #fff;
+    color:#fff;
+    text-align: center;
+}
+.views{
+    display: flex;
+    padding:70px 0px;
+}

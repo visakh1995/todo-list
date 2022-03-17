@@ -21,6 +21,9 @@ function Navbar() {
               <a href="/users">Users</a>
             </li>
             <li>
+              <a href="/workaround">works</a>
+            </li>
+            <li>
               <Link to="/cart">
                 <FaCartPlus />
               </Link>
