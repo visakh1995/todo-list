@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import company from "./company";
 import "./basic.css";
 import axios from "axios";
+import {createStore} from 'redux'
 
 function Basics() {
   const [employees, setEmployee] = useState(company);

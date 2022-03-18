@@ -10,9 +10,16 @@ import Basics from "./Basics";
 import Home from "./Home";
 import Workaround from "./Workaround";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Reduxcore from "./redux/Reduxcore";
+import Test from "./redux/Test";
+import { Provider } from 'react-redux';
+import store from "./redux/store";
+
+ 
 
 function App() {
   return (
+    <Provider store ={store}>
     <Router>
       <div>
         <Navbar />
@@ -27,10 +34,13 @@ function App() {
         {/* <Showcase /> */}
         {/* <Promises/> */}
         {/* <Basics/> */}
+        {/* <Reduxcore/> */}
+        <Test/>
         
         
       </div>
     </Router>
+    </Provider>
   );
 }
 
