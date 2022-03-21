@@ -16,7 +16,6 @@ import { Provider } from 'react-redux';
 import store from "./redux/store";
 
  
-
 function App() {
   return (
     <Provider store ={store}>
@@ -35,6 +34,23 @@ function App() {
         {/* <Promises/> */}
         {/* <Basics/> */}
         {/* <Reduxcore/> */}
+
+        {/* function PrivateRoute({ children, ...rest }) {
+        let auth = useAuth();
+        return (
+          <Route
+            {...rest}
+            render={() => auth
+              ? children
+              : <Redirect to="/login" />
+            }
+          />
+        );
+       } */}
+       {/* function PrivateRoute({ children }) {
+       const auth = useAuth();
+       return auth ? children : <Navigate to="/login" />; */}
+       {/* } */}
         <Test/>
         
         
