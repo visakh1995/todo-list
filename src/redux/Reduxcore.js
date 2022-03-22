@@ -29,6 +29,8 @@ const appReducer = (prevState = initialState, action) => {
 // must pass argument inside create store
 // otherwise shows
 
+
+
 const store = createStore(appReducer);
 const state = store.getState();
 // console.log(state.value);
